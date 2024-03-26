@@ -35,15 +35,14 @@ void close_input_buffer(InputBuffer* input_buffer){
 int main(int argc,char* argv[]){
     InputBuffer* inputBuffer = new_input_buffer();      
     while(true){    
-        print_prompt();    
+        print_prompt();     
         read_input(inputBuffer);
-        printf("%zu",inputBuffer->buffer_length);
         if(strcmp(inputBuffer->buffer,".exit")==0){
             close_input_buffer(inputBuffer); 
             exit(0);             
         }
         else{
-            printf("not valid command!\n");      
+            printf("'%s' is not valid command!\n",inputBuffer->buffer);      
         }
     }
 }
