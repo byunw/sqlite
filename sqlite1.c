@@ -17,13 +17,11 @@ InputBuffer* new_input_buffer(){
     return input_buffer;    
 }
 
-void print_prompt() { printf("db > \n");}
+void print_prompt() { printf("woosukdb > \n");}
 
 void read_input(InputBuffer* inputBuffer){
      ssize_t bytes_read = getline(&(inputBuffer->buffer),&(inputBuffer->buffer_length),stdin);
-     //the number of typed input characters is stored 
      inputBuffer->input_length = bytes_read-1;
-     //overwriting the new line character 
      inputBuffer->buffer[bytes_read-1] = 0;
 }
 
